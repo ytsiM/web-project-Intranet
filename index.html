@@ -2,13 +2,10 @@
 <html lang="pt-BR" data-bs-theme="white">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intranet Takai</title>
-    <!-- Alterar path do ícone quando for passar para o servidor -->
     <link rel="shortcut icon" type="image/x-icon" href="http://192.168.0.150/intranet/imagensNVU/favicon.png">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -16,79 +13,33 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
         </script>
 
-    
-    <script>
-    /*
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const htmlElement = document.documentElement;
-            const switchElement = document.getElementById('darkModeSwitch');
-
-            const currentTheme = localStorage.getItem('bsTheme') || 'dark';
-            htmlElement.setAttribute('data-bs-theme', currentTheme);
-            switchElement.checked = currentTheme === 'dark';
-
-            switchElement.addEventListener('change', function () {
-                if (this.checked) {
-                    htmlElement.setAttribute('data-bs-theme', 'dark');
-                    localStorage.setItem('bsTheme', 'dark');
-                } else {
-                    htmlElement.setAttribute('data-bs-theme', 'light');
-                    localStorage.setItem('bsTheme', 'light');
-                }
-            });
-        }); */
-
-    </script> 
-
     <style>
         .container {
-            /* Tamanho do container */
-            width: 1500px;
-            /* Distância entre botões na vertical */
-            line-height: 165px;
-            /* Linha que fica ao redor do ".container" */
-            border: 1px solid rgb(255, 0, 0);
-        }
-
-        .info_version {
-            color: red;
-            font-size: 10px;
+            line-height: 120px;
         }
 
         .button_settings {
-            /* Altera espaço de dentro do botão */
             padding: 5px 15px;
-            /* Tamanho da fonte */
-            font-size: 20px;
-            /* Deixa as bordas dos botões mais arredondas quanto maior o número em px */
+            font-size: 18px;
             border-radius: 10px;
-            /* Quebra automatica de legendas muito longas */
-            word-break: break-word;
-            /* Cor da legenda */
             color: rgb(255, 0, 0);
-
-            /* Limita a largura do botão */
-            max-width: 230px;
-            /* Limita a altura do botão */
-            max-height: 200px;
-
-            /* Lida com o conteúdo que transborda */
-            overflow: hidden;
-            /* Esconde conteudo que transborda */
-            white-space: nowrap;
-
+            max-width: 300px;
             width: 100%;
             height: auto;
+            overflow: hidden;
+        }
 
+        .button_settings img {
+            max-width: 70px;
+            height: auto;
         }
 
         h3 {
             position: fixed;
-            bottom: 0;
-            right: 0;
-            font-size: 15px;
-            /* Adiciona um pequeno espaço da borda da tela */
-            margin: 0px;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+            margin: 0;
             color: rgb(255, 0, 0);
         }
 
@@ -97,133 +48,131 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            text-align: center;
         }
 
-        .darkmode {
-            position: flex;
-            right: 0;
-            margin: 0;
+        /* Configurações para dispositivos móveis e orientação */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .col-6, .col-md-4 {
+                flex: 0 0 33.33%;
+                max-width: 33.33%;
+            }
+        }
+
+        @media (max-width: 768px) and (orientation: portrait) {
+            .col-6, .col-md-4 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
         }
 
     </style>
-
 </head>
 
 <body>
 
-    <!-- Alterar path do ícone quando for passar para o servidor -->
-    <!-- Recomendado utilização de ícones 96x96 pois não será necessário alterar o alinhamento e tamanho dos botões -->
     <div class="text-center">
-        <img src="/intranetRework/src/Titulo2.png" class="img-fluid" style="max-width: 600px;" alt="...">
+        <img src="/intranetRework/src/Titulo2.png" class="img-fluid" style="max-width: 700px;" alt="...">
     </div>
-
-    <!-- <div class=".darkmode">
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="darkModeSwitch" checked>
-                <label class="form-check-label" for="darkModeSwitch">Dark Mode teste</label>
-            </div>
-    </div> -->
 
     <div class="text-center">
         <hr style="border-top: 5px solid rgb(255, 0, 0); width: 100%; margin: auto;">
-        <h2 style="color: rgb(255, 0, 0);">Pagina Inicial</h2>
+        <h2 style="color: rgb(255, 0, 0);">Página Inicial</h2>
         <hr style="border-top: 5px solid rgb(255, 0, 0); width: 100%; margin: auto;">
     </div>
 
-    <!-- É possível usar o "container text-center mt- <número desejado>" -->
-    <br>
-    <div class="container text-center">
-        <div class="row">
-            <div class="col-6 col-md-3">
-                <a href="#" target="_blank" class="btn btn-outline-danger button_settings">
+    <div class="container text-center mt-3">
+        <div class="row g-3">
+            <div class="col-6 col-md-4">
+                <a href="http://192.168.0.150/listaramais/" target="_blank" class="btn btn-outline-danger button_settings">
                     <figure class="figure">
                         <img src="/intranetRework/src/telephone.png" class="img-fluid rounded" alt="...">
                         <figcaption>Lista de ramais</figcaption>
                     </figure>
                 </a>
             </div>
-            <div class="col-6 col-md-3">
-                <a href="#" target="_blank" class="btn btn-outline-danger button_settings">
+            <div class="col-6 col-md-4">
+                <a href="http://192.168.0.150/helpdesk/" target="_blank" class="btn btn-outline-danger button_settings">
                     <figure class="figure">
                         <img src="/intranetRework/src/wrench.png" class="img-fluid rounded" alt="...">
                         <figcaption>Consultar chamados</figcaption>
                     </figure>
                 </a>
             </div>
-            <div class="col-6 col-md-3">
-                <a href="#" target="_blank" class="btn btn-outline-danger button_settings">
+            <div class="col-6 col-md-4">
+                <a href="https://zimbra2.takai.com.br/#1" target="_blank" class="btn btn-outline-danger button_settings">
                     <figure class="figure">
                         <img src="/intranetRework/src/e-mail.png" class="img-fluid rounded" alt="...">
                         <figcaption>Acesse o seu e-mail</figcaption>
                     </figure>
                 </a>
             </div>
-            <div class="col-6 col-md-3">
-                <a href="#" target="_blank" class="btn btn-outline-danger button_settings">
+            <div class="col-6 col-md-4">
+                <a href="http://192.168.0.150/intranet/links.html" target="_blank" class="btn btn-outline-danger button_settings">
                     <figure class="figure">
                         <img src="/intranetRework/src/stack.png" class="img-fluid rounded" alt="...">
                         <figcaption>Links úteis</figcaption>
                     </figure>
                 </a>
             </div>
-            <div class="col-6 col-md-3">
-                <a href="#" target="_blank" class="btn btn-outline-danger button_settings">
+            <div class="col-6 col-md-4">
+                <a href="http://192.168.0.150/intranet/manuais.html" target="_blank" class="btn btn-outline-danger button_settings">
                     <figure class="figure">
                         <img src="/intranetRework/src/book.png" class="img-fluid rounded" alt="...">
                         <figcaption>Manuais</figcaption>
                     </figure>
                 </a>
             </div>
-            <div class="col-6 col-md-3">
-                <a href="#" target="_blank" class="btn btn-outline-danger button_settings">
+            <div class="col-6 col-md-4">
+                <a href="http://192.168.0.150/helpdesk/front/reservationitem.php" target="_blank" class="btn btn-outline-danger button_settings">
                     <figure class="figure">
                         <img src="/intranetRework/src/reserva.png" class="img-fluid rounded" alt="...">
                         <figcaption>Reservas</figcaption>
                     </figure>
                 </a>
             </div>
-            <div class="col-6 col-md-3">
-                <a href="#" target="_blank" class="btn btn-outline-danger button_settings">
+            <div class="col-6 col-md-4">
+                <a href="http://192.168.0.150/intranet/Documentos/dadoscadastrais.pdf" target="_blank" class="btn btn-outline-danger button_settings">
                     <figure class="figure">
                         <img src="/intranetRework/src/note.png" class="img-fluid rounded" alt="...">
                         <figcaption> Dados cadastrais Takai </figcaption>
                     </figure>
                 </a>
             </div>
-            <div class="col-6 col-md-3">
-                <a href="#" target="_blank" class="btn btn-outline-danger button_settings">
+            <div class="col-6 col-md-4">
+                <a href="https://app.dugestao.com.br/" target="_blank" class="btn btn-outline-danger button_settings">
                     <figure class="figure">
                         <img src="/intranetRework/src/dealerup-resized.png" class="img-fluid rounded" alt="...">
                         <figcaption>DealerUp</figcaption>
                     </figure>
                 </a>
             </div>
-            <div class="col-6 col-md-3">
-                <a href="#" target="_blank" class="btn btn-outline-danger button_settings">
+            <div class="col-6 col-md-4">
+                <a href="https://app.vianuvem.com.br/login.php" target="_blank" class="btn btn-outline-danger button_settings">
                     <figure class="figure">
                         <img src="/intranetRework/src/unicoauto-resized.png" class="img-fluid rounded" alt="...">
                         <figcaption>UnicoAuto</figcaption>
                     </figure>
                 </a>
             </div>
-            <div class="col-6 col-md-3">
-                <a href="#" target="_blank" class="btn btn-outline-danger button_settings">
+            <div class="col-6 col-md-4">
+                <a href="https://dinami.takai.com.br/" target="_blank" class="btn btn-outline-danger button_settings">
                     <figure class="figure">
                         <img src="/intranetRework/src/dinami-resized.png" class="img-fluid rounded" alt="...">
                         <figcaption>Dínami</figcaption>
                     </figure>
                 </a>
             </div>
-            <div class="col-6 col-md-3">
-                <a href="#" target="_blank" class="btn btn-outline-danger button_settings">
+            <div class="col-6 col-md-4">
+                <a href="https://app.autoconf.com.br/" target="_blank" class="btn btn-outline-danger button_settings">
                     <figure class="figure">
                         <img src="/intranetRework/src/autoconf-resized.png" class="img-fluid rounded" alt="...">
                         <figcaption>Autoconf</figcaption>
                     </figure>
                 </a>
             </div>
-            <div class="col-6 col-md-3">
-                <a href="#" target="_blank" class="btn btn-outline-danger button_settings">
+            <div class="col-6 col-md-4">
+                <a href="https://takai.syonet.com/" target="_blank" class="btn btn-outline-danger button_settings">
                     <figure class="figure">
                         <img src="/intranetRework/src/syonet-resized.png" class="img-fluid rounded" alt="...">
                         <figcaption>Syonet</figcaption>
